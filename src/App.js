@@ -6,7 +6,7 @@ import ListadoNoticias from "./components/ListadoNoticias"
 function App() {
 
   // definir la categoria y noticias
-  const [categoria, guardarCategoria] = useState("general");
+  const [categoria, guardarCategoria] = useState("");
   const [noticias, guardarNoticias] = useState([])
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function App() {
       <div className="container white">
         <Formulario guardarCategoria={guardarCategoria} />
 
-        <ListadoNoticias noticias={noticias} />
+        {noticias.length !== 0 && <ListadoNoticias noticias={noticias} />}
       </div>
     </Fragment>
   );
